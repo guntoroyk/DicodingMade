@@ -1,8 +1,10 @@
 package com.guntoroyk.mynavigationdrawer;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -59,6 +61,14 @@ public class MainActivity extends AppCompatActivity
                 .load(profileImageUrl)
                 .into(profileCircleImageView);
 
+        if (savedInstanceState == null){
+            Fragment currentFragment = new HomeFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_main,currentFragment)
+                    .commit();
+        }
+
     }
 
     @Override
@@ -110,25 +120,39 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            // Handle the camera action
+        Bundle bundle = new Bundle();
+        Fragment fragment = null;
+        String title = "";
+        if (id == R.id.nav_home){
+            title = "Home";
+            fragment = new HomeFragment();
+        } else if (id == R.id.nav_camera) {
+            title = "Camera";
+            fragment = new PageFragment();
+            bundle.putString(PageFragment.EXTRAS,"Camera");
+            fragment.setArguments(bundle);
         } else if (id == R.id.nav_gallery) {
-
+            title = "Gallery";
+            fragment = new PageFragment();
+            bundle.putString(PageFragment.EXTRAS,"Gallery");
+            fragment.setArguments(bundle);
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_cart) {
-
+        } else if (id == R.id.nav_manage) {
         } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_send) {
-
+        }
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_main, fragment)
+                    .commit();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(title);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
