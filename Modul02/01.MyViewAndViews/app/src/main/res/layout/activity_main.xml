@@ -20,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/google_pixel_photo"
                 android:src="@drawable/pixel_google"
                 android:scaleType="fitXY"/>
             <TextView
