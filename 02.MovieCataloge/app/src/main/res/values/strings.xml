@@ -5,6 +5,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">The title of Movie</string>
+    <string name="date">21, July 2019</string>
+    <string name="overview">Overview</string>
+    <string name="desc">Blablabla</string>
 
     <string-array name="data_name">
         <item>A Star is Born</item>
