@@ -6,9 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.guntoroyk.moviecataloge.R;
-import com.guntoroyk.moviecataloge.model.Movie;
+import com.guntoroyk.moviecataloge.model.TvShow;
 
-public class MovieDetailActivity extends AppCompatActivity {
+public class TvShowDetailActivity extends AppCompatActivity {
     TextView tvName;
     TextView tvDate;
     TextView lbOverview;
@@ -20,12 +20,12 @@ public class MovieDetailActivity extends AppCompatActivity {
     private String txtOverview;
     private int intPhoto;
 
-    public static final String EXTRA_MOVIE = "extra_movie";
+    public static final String EXTRA_TV_SHOW = "extra_tv_show";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
+        setContentView(R.layout.activity_tv_show_detail);
 
         tvName = findViewById(R.id.tv_name);
         tvDate = findViewById(R.id.tv_date);
@@ -33,13 +33,13 @@ public class MovieDetailActivity extends AppCompatActivity {
         lbOverview = findViewById(R.id.tv_label_overview);
         ivPhoto = findViewById(R.id.img_photo);
 
-        getSupportActionBar().setTitle(getResources().getString(R.string.detail_movie));
+        getSupportActionBar().setTitle(R.string.detail_tv_show);
 
-        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        txtName = movie.getName();
-        txtDate = movie.getDate();
-        txtOverview = movie.getOverview();
-        intPhoto = movie.getPhoto();
+        TvShow tvShow = getIntent().getParcelableExtra(EXTRA_TV_SHOW);
+        txtName = tvShow.getName();
+        txtDate = tvShow.getDate();
+        txtOverview = tvShow.getOverview();
+        intPhoto = tvShow.getPhoto();
 
         tvName.setText(txtName);
         tvDate.setText(txtDate);

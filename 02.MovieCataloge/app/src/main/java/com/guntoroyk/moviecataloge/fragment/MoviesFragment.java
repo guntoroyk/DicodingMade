@@ -1,6 +1,7 @@
 package com.guntoroyk.moviecataloge.fragment;
 
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.guntoroyk.moviecataloge.R;
+import com.guntoroyk.moviecataloge.activity.MovieDetailActivity;
 import com.guntoroyk.moviecataloge.adapter.MovieAdapter;
 import com.guntoroyk.moviecataloge.data.MovieData;
 import com.guntoroyk.moviecataloge.model.Movie;
@@ -45,7 +48,21 @@ public class MoviesFragment extends Fragment {
 
     private void showRecyclerList(){
         rvMovies.setLayoutManager(new LinearLayoutManager(getContext()));
-        MovieAdapter listHeroAdapter = new MovieAdapter(list);
-        rvMovies.setAdapter(listHeroAdapter);
+        MovieAdapter listMovieAdapter = new MovieAdapter(list);
+        rvMovies.setAdapter(listMovieAdapter);
+
+        listMovieAdapter.setOnItemClickCallback(new MovieAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Movie data) {
+                showSelectedMovie(data);
+            }
+        });
+    }
+
+    private void showSelectedMovie(Movie movie) {
+//        Toast.makeText(getContext(), "Kamu memilih " + movie.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
+        intent.putExtra(MovieDetailActivity.EXTRA_MOVIE, movie);
+        startActivity(intent);
     }
 }

@@ -7,8 +7,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">The title of Movie</string>
     <string name="date">21, July 2019</string>
-    <string name="overview">Overview</string>
     <string name="desc">Blablabla</string>
+    <string name="detail_movie">Detail Movie</string>
+    <string name="overview">Overview</string>
+    <string name="detail_tv_show">Detail TV Show</string>
+    <string name="title_tv_show">The title of Tv Show</string>
+    <string name="name_tv_show">Nama TV Show</string>
 
     <string-array name="data_name">
         <item>A Star is Born</item>
@@ -67,4 +71,66 @@
         <item>October 19, 2018</item>
         <item>December 13, 2018</item>
     </array>
+
+    <string-array name="data_name_tv_show">
+        <item>Baki</item>
+        <item>Chilling Adventures of Sabrina</item>
+        <item>Final Space</item>
+        <item>Goblin Slayer</item>
+        <item>How Not to Summon a Demon Lord</item>
+        <item>Krypton</item>
+        <item>Sword Art Online Alternative: Gun Gale Online</item>
+        <item>The Rain</item>
+        <item>The Resident</item>
+        <item>The Rookie</item>
+        <item>Titans</item>
+        <item>Violet Evergarden</item>
+    </string-array>
+
+    <string-array name="data_overview_tv_show">
+        <item>The protagonist, Baki Hanma, trains with an intense focus to become strong enough to surpass his father, Yujiro Hanma, the strongest fighter in the world. Five of the world\'s most violent and brutal death row inmates are gathering to face Baki. Their objective is to taste defeat \-\- their unmatched strength and skill have led them to grow bored of life itself, and they now seek out Baki in the hopes that he can overwhelm and utterly crush them. In this crisis, other underground martial art warriors gather to fight by Baki\'s side: Kaoru Hanayama, Gouki Shibukawa, Retsu Kaioh, and Doppo Orochi. An epic showdown between violent death row inmates and Baki and his friends begins.</item>
+        <item>As her 16th birthday nears, Sabrina must choose between the witch world of her family and the human world of her friends. Based on the Archie comic.</item>
+        <item>An astronaut named Gary and his planet-destroying sidekick Mooncake embark on serialized journeys through space in order to unlock the mystery of “Final Space,” the last point in the universe, if it actually does exist.</item>
+        <item>A young priestess has formed her first adventuring party, but almost immediately they find themselves in distress. It\'s the Goblin Slayer who comes to their rescue\—a man who\'s dedicated his life to the extermination of all goblins, by any means necessary. And when rumors of his feats begin to circulate, there\'s no telling who might come calling next.\..</item>
+        <item>In regards to the MMORPG Cross Reverie, Sakamoto Takuma boasted an overwhelming strength that was enough for him to be called the Demon King by the other players. One day, he gets summoned to another world with his appearance in the game. There, there are two people that insist "I am the real summon master." Takuma gets slave-turning magic used for summoned beasts cast on him by the girls.\..</item>
+        <item>Set two generations before the destruction of the legendary Man of Steel’s home planet, Krypton follows Superman’s grandfather — whose House of El was ostracized and shamed — as he fights to redeem his family’s honor and save his beloved world from chaos.</item>
+        <item>Karen Kohiruimaki always felt out of place in the real world. Due to her extreme height, she found it hard to make friends with other girls her age. Everything changes when she\'s introduced to VR and Gun Gale Online. In GGO, Karen is free to play the cute, chibi avatar of her dreams! Can Karen find friendship in this bullet-ridden MMO.\..?</item>
+        <item>After a brutal virus wipes out most of the population, two young siblings embark on a perilous search for safety. A Scandinavian thriller series.</item>
+        <item>A tough, brilliant senior resident guides an idealistic young doctor through his first day, pulling back the curtain on what really happens, both good and bad, in modern-day medicine.</item>
+        <item>Starting over isn’t easy, especially for small-town guy John Nolan who, after a life-altering incident, is pursuing his dream of being an LAPD officer. As the force’s oldest rookie, he’s met with skepticism from some higher-ups who see him as just a walking midlife crisis.</item>
+        <item>A team of young superheroes led by Nightwing (formerly Batman\'s first Robin) form to combat evil and other perils.</item>
+        <item>The war is over, and Violet Evergarden needs a job. Scarred and emotionless, she takes a job as a letter writer to understand herself and her past.</item>
+    </string-array>
+
+    <array name="data_photo_tv_show">
+        <item>@drawable/tv_baki</item>
+        <item>@drawable/tv_chilling_adventures</item>
+        <item>@drawable/tv_final_space</item>
+        <item>@drawable/tv_goblin_slayer</item>
+        <item>@drawable/tv_how_not_to_summon</item>
+        <item>@drawable/tv_krypto</item>
+        <item>@drawable/tv_sword</item>
+        <item>@drawable/tv_the_rain</item>
+        <item>@drawable/tv_the_resident</item>
+        <item>@drawable/tv_the_rookie</item>
+        <item>@drawable/tv_titans</item>
+        <item>@drawable/tv_violet_evergarden</item>
+    </array>
+
+    <array name="data_date_tv_show">
+        <item>June 26, 2018</item>
+        <item>October 26, 2018</item>
+        <item>February 26, 2018</item>
+        <item>October 7, 2018</item>
+        <item>July 5, 2018</item>
+        <item>March 21, 2018</item>
+        <item>April 8, 2018</item>
+        <item>May 4, 2018</item>
+        <item>January 21, 2018</item>
+        <item>October 16, 2018</item>
+        <item>October 12, 2018</item>
+        <item>January 11, 2018</item>
+    </array>
+
+
 </resources>

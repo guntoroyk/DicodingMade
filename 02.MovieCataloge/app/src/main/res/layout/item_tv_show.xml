@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_toEndOf="@id/img_photo"
-        android:text="@string/name_movies"
+        android:text="@string/name_tv_show"
         android:textSize="18sp"
         android:textStyle="bold" />
     <TextView

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MovieDetailActivity">
+    tools:context=".activity.TvShowDetailActivity">
 
     <ImageView
         android:id="@+id/img_photo"
@@ -15,7 +15,7 @@
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/poster_a_star"/>
+        app:srcCompat="@drawable/poster_a_star" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -26,7 +26,7 @@
         android:layout_marginEnd="16dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:text="@string/title"
+        android:text="@string/title_tv_show"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_photo"
         app:layout_constraintTop_toTopOf="parent" />

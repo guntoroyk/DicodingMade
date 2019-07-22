@@ -1,24 +1,16 @@
 package com.guntoroyk.moviecataloge.data;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 
 import com.guntoroyk.moviecataloge.R;
-import com.guntoroyk.moviecataloge.fragment.MoviesFragment;
 import com.guntoroyk.moviecataloge.model.Movie;
-import com.guntoroyk.moviecataloge.R;
 
 import java.util.ArrayList;
 
 public class MovieData {
 
     public static ArrayList<Movie> getListData(Context context) {
-//        String[] dataName = Resources.getSystem().getStringArray(R.array.data_name);
-//        String[] dataDate = Resources.getSystem().getStringArray(R.array.data_date);
-//        String[] dataOverview = Resources.getSystem().getStringArray(R.array.data_overview);
-//        TypedArray dataPhoto = Resources.getSystem().obtainTypedArray(R.array.data_photo);
-
         String[] dataName;
         String[] dataDate;
         String[] dataOverview;
@@ -41,7 +33,7 @@ public class MovieData {
             list.add(movie);
         }
 
-        return  list;
+        return list;
     }
 
 
