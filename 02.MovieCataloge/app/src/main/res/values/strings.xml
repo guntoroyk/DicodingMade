@@ -16,6 +16,7 @@
     <string name="change_language_settings">Change Language</string>
     <string name="tab_title_movie">Movies</string>
     <string name="tab_title_tv_show">TV Shows</string>
+    <string name="app_title">Movie and TV Show Catalogue</string>
 
     <string-array name="data_name">
         <item>A Star is Born</item>

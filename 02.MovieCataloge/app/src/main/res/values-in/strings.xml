@@ -16,6 +16,7 @@
     <string name="change_language_settings">Ubah Bahasa</string>
     <string name="tab_title_movie">Film</string>
     <string name="tab_title_tv_show">Acara TV</string>
+    <string name="app_title">Katalog Film dan Acara TV</string>
 
     <string-array name="data_name">
         <item>A Star is Born</item>

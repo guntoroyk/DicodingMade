@@ -2,16 +2,15 @@ package com.guntoroyk.moviecataloge.fragment;
 
 
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.guntoroyk.moviecataloge.R;
 import com.guntoroyk.moviecataloge.activity.MovieDetailActivity;
@@ -20,7 +19,6 @@ import com.guntoroyk.moviecataloge.data.MovieData;
 import com.guntoroyk.moviecataloge.model.Movie;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,9 +36,13 @@ public class MoviesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_movies, container, false);
-        rvMovies = (RecyclerView) view.findViewById(R.id.rv_movie);
+        rvMovies = view.findViewById(R.id.rv_movie);
         rvMovies.setHasFixedSize(true);
-        rvMovies.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+
+        // add divider
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.divider));
+        rvMovies.addItemDecoration(itemDecoration);
 
         list.addAll(MovieData.getListData(getContext()));
 
@@ -48,7 +50,7 @@ public class MoviesFragment extends Fragment {
         return view;
     }
 
-    private void showRecyclerList(){
+    private void showRecyclerList() {
         rvMovies.setLayoutManager(new LinearLayoutManager(getContext()));
         MovieAdapter listMovieAdapter = new MovieAdapter(list);
         rvMovies.setAdapter(listMovieAdapter);

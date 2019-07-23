@@ -4,6 +4,8 @@ package com.guntoroyk.moviecataloge.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,6 +39,11 @@ public class TvShowsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tv_shows, container, false);
         rvTvShows = (RecyclerView) view.findViewById(R.id.rv_tv_show);
         rvTvShows.setHasFixedSize(true);
+
+        // add divider
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.divider));
+        rvTvShows.addItemDecoration(itemDecoration);
 
         list.addAll(TvShowData.getListData(getContext()));
         showRecyclerList();
