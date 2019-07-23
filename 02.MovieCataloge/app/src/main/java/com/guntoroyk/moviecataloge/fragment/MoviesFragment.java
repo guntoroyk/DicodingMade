@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,6 +40,7 @@ public class MoviesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movies, container, false);
         rvMovies = (RecyclerView) view.findViewById(R.id.rv_movie);
         rvMovies.setHasFixedSize(true);
+        rvMovies.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
 
         list.addAll(MovieData.getListData(getContext()));
 
@@ -59,10 +61,12 @@ public class MoviesFragment extends Fragment {
         });
     }
 
+
     private void showSelectedMovie(Movie movie) {
 //        Toast.makeText(getContext(), "Kamu memilih " + movie.getName(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
         intent.putExtra(MovieDetailActivity.EXTRA_MOVIE, movie);
         startActivity(intent);
     }
+
 }

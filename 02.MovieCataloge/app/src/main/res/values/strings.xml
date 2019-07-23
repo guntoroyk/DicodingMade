@@ -12,7 +12,10 @@
     <string name="overview">Overview</string>
     <string name="detail_tv_show">Detail TV Show</string>
     <string name="title_tv_show">The title of Tv Show</string>
-    <string name="name_tv_show">Nama TV Show</string>
+    <string name="name_tv_show">Name TV Show</string>
+    <string name="change_language_settings">Change Language</string>
+    <string name="tab_title_movie">Movies</string>
+    <string name="tab_title_tv_show">TV Shows</string>
 
     <string-array name="data_name">
         <item>A Star is Born</item>
