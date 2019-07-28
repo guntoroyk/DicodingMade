@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnStartService = findViewById(R.id.btn_start_service);
         btnStartService.setOnClickListener(this);
 
-        btnStartIntentService = findViewById(R.id.btn_start_inten_service);
+        btnStartIntentService = findViewById(R.id.btn_start_intent_service);
         btnStartIntentService.setOnClickListener(this);
 
         btnStartBoundService = findViewById(R.id.btn_start_bound_service);
@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent mStartServiceIntent = new Intent(MainActivity.this, OriginService.class);
                 startService(mStartServiceIntent);
                 break;
-            case R.id.btn_start_inten_service:
-
+            case R.id.btn_start_intent_service:
+                Intent mStartIntentService = new Intent(MainActivity.this, GuntoroIntentService.class);
+                mStartIntentService.putExtra(GuntoroIntentService.EXTRA_DURATION, 5000);
+                startService(mStartIntentService);
                 break;
             case R.id.btn_start_bound_service:
 
