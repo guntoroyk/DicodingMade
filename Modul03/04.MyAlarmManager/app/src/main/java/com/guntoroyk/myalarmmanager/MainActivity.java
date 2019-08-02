@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton btnOnceTime;
     Button btnSetOnce;
 
+    TextView tvRepeatingAlarm;
+    EditText edtRepeatingMessage;
+    ImageButton btnRepeatingTime;
+    Button btnSetRepeating;
+
     private AlarmReceiver alarmReceiver;
 
     @Override
@@ -41,8 +46,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnOnceTime.setOnClickListener(this);
         btnSetOnce.setOnClickListener(this);
 
-        alarmReceiver = new AlarmReceiver();
+        tvRepeatingAlarm = findViewById(R.id.tv_repeating_time);
+        edtRepeatingMessage = findViewById(R.id.edt_repeating_message);
+        btnRepeatingTime = findViewById(R.id.btn_repeating_time);
+        btnSetRepeating = findViewById(R.id.btn_set_repeating_alarm);
 
+        btnRepeatingTime.setOnClickListener(this);
+        btnSetRepeating.setOnClickListener(this);
+
+        alarmReceiver = new AlarmReceiver();
     }
 
     final String DATE_PICKER_TAG = "DatePicker";
@@ -70,6 +82,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         onceTime,
                         onceMessage);
                 break;
+            case R.id.btn_repeating_time:
+                TimePickerFragment timePickerFragmentRepeat = new TimePickerFragment();
+                timePickerFragmentRepeat.show(getSupportFragmentManager(), TIME_PICKER_REPEAT_TAG);
+                break;
+            case R.id.btn_set_repeating_alarm:
+                String repeatTime = tvRepeatingAlarm.getText().toString();
+                String repeatMessage = edtRepeatingMessage.getText().toString();
+                alarmReceiver.setRepeatingAlarm(this, AlarmReceiver.TYPE_REPEATING, repeatTime, repeatMessage);
+                break;
         }
     }
 
@@ -93,6 +114,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (tag) {
             case TIME_PICKER_ONCE_TAG:
                 tvOnceTime.setText(dateFormat.format(calendar.getTime()));
+                break;
+            case TIME_PICKER_REPEAT_TAG:
+                tvRepeatingAlarm.setText(dateFormat.format(calendar.getTime()));
                 break;
             default:
                 break;
