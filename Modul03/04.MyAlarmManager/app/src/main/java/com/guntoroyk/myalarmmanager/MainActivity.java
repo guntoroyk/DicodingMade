@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton btnRepeatingTime;
     Button btnSetRepeating;
 
+    Button btnCancelRepeatingAlarm;
+
     private AlarmReceiver alarmReceiver;
 
     @Override
@@ -50,9 +52,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtRepeatingMessage = findViewById(R.id.edt_repeating_message);
         btnRepeatingTime = findViewById(R.id.btn_repeating_time);
         btnSetRepeating = findViewById(R.id.btn_set_repeating_alarm);
+        btnCancelRepeatingAlarm = findViewById(R.id.btn_cancel_repeating_alarm);
 
         btnRepeatingTime.setOnClickListener(this);
         btnSetRepeating.setOnClickListener(this);
+        btnCancelRepeatingAlarm.setOnClickListener(this);
 
         alarmReceiver = new AlarmReceiver();
     }
